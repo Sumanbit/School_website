@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website design</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        #navbar {
+    flex-direction: column;
+}
+
+#navbar ul li a{
+    font-size: 1rem;
+    padding: 0px 7px;
+    padding-bottom: 8px;
+}
+/* Home section */
+#home{
+    height: 370px; 
+    padding: 3px 28px;
+}
+
+#home::before{
+    height: 480px; 
+}
+
+#home p{
+    font-size: 13px;
+}
+
+/* Services section  */
+#services{
+    flex-direction: column;
+}
+
+#services .box { 
+    padding: 14px;
+    margin: 2px 0px; 
+    margin-bottom: 20px;
+}
+
+/* Clients section */
+#clients{
+    flex-wrap: wrap;
+}
+
+#clients img{
+    width: 66px;
+    padding: 6px;
+    height: auto;
+}
+
+/* Contact us section */
+#contact-box form{
+    width:80%;
+}
+/* Footer */
+
+/* Utility classes */
+.h-primary{
+    font-size:26px;
+}
+.btn{
+    font-size: 13px;
+    padding: 4px 8px;
+}
+        *{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    /* background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7),url(schl.jpg)); */
+    /* background-image: url('schl.jpg'); */
+    /* background-image: url(harvard.jpg); */
+    background-image: url('boston.jpg');
+    background-position: center;
+    background-size: cover;
+    /* background-size: contain; */
+    position: relative;
+    color: white;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+  align-items: center;
+  /* color: white; */
+
+}
+.nav img{
+    width: 100px;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+color:#fff;
+text-decoration: none;
+font-size: 13px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+height: 2px;
+background: #f44336;
+display: block;
+margin: auto;
+transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+
+}
+.textbox{
+    width: 99%;
+    /* color: black; */
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.textbox h1{
+    /* font-size: 62px; */
+    font-size: 30px;
+}
+.textbox p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    /* color:black; */
+    color: #fff;
+}
+.herobtn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.herobtn:hover{
+    border: 1px solid #f44336;
+    transition: 1s;
+}
+@media(max-width:700px){
+    .textbox h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+
+    }
+}
+/* ---------course------ */
+.course{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+.p{
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    line height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+}
+.course-col{
+    flex-basis: 31%;
+    background:greenyellow;
+    border-radius: 30px;
+    border-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+.h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+
+}
+.campus{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    /* display:inline; */
+    display: flex;
+    justify-content: space-between;
+}
+.campus-col img{
+    width: 20%;
+display: block;
+}
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.layer:hover{
+    background: rgba(226,0,0,0.7);
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
+/* ------------facilities--------------- */
+.facilities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.facilities-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.facilities-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+.facilities-col p{
+    padding: 0;
+
+}
+.facilities-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+/* ----------testimonials----------- */
+.testimonials{
+width: 80%;
+margin: auto;
+padding-top: 100px;
+text-align: center;
+}
+.testimonial-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+.testimonial-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+,.testimonial-col h3{
+    margin-top: 15px;
+    text-align: left;
+}
+
+
+/* ------------call to action------ */
+.cta{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(banner2.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.cta h1{
+    color: white;
+    margin-bottom: 40px;
+    padding: 0;
+}
+.Footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.Footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+
+}
+    </style>
+</head>
+<body>
+<section class="header">
+<nav>  
+  <!-- <a href="index.html"><img src="images.png"></a> -->
+  <div class="nav-links">
+      <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Course</a></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="">Contact</a></li>
+      </ul>
+  </div>
+</nav>
+<div class="textbox">
+    <!-- <h1>Howrah's One Of The Beautiful School</h1> -->
+    <h1>Boston University is a leading private research institution with two primary campuses in the heart of Boston and programs around the world.</h1>
+    <!-- <p>Making Website is one of the easiest thing in the world. You just need to learn <br>HTML,CSS,JS and you are good to go.</p> -->
+    <p>The university is nonsectarian but has a historical affiliation with the United Methodist Church</p>
+    <a href="" class="herobtn">Visit Us To Know More</a>
+</div>
+</section>
+
+<!-- ---------course-------- -->
+<section class="course">
+    <h1>Courses We offer</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius facere laudantium cumque sint sapiente dicta, obcaecati placeat temporibus possimus ipsam sequi? Temporibus dolore, eligendi quod in saepe et laborum! Magni.</p>
+    <div class="row">
+        <div class="course-col">
+            <h3>Intermidiate</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid exercitationem nesciunt labore fuga explicabo, rerum quia pariatur expedita atque deserunt accusantium dignissimos aut molestias assumenda blanditiis voluptatibus quibusdam saepe porro eos. Possimus, earum excepturi!</p>
+        </div>
+        <div class="course-col">
+            <h3>Degree</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi consequatur officia nobis est magnam. Quo quis ullam veritatis fugiat corrupti, accusamus iure? Rem sint assumenda, itaque quae adipisci consectetur magni repellat doloremque velit sunt eius aliquam, molestias incidunt sequi fugit!</p>
+        </div>
+        <div class="course-col">
+            <h3>Post Graduation</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse incidunt non quae nisi veniam mollitia quidem? Illo quam a expedita deserunt sequi impedit, tempora ad fugiat neque modi! A libero id culpa mollitia commodi labore nostrum enim laborum facilis eos?</p>
+        </div>
+    </div>
+</section>
+<!-- --------Campus-------- -->
+<secton class="campus">
+    <h1>Our Global Campus</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe nobis, delectus quas fuga, ab aliquid ipsam in assumenda perspiciatis possimus incidunt impedit, odit amet ratione facilis fugiat optio sequi itaque.</p>
+    <div class="campus-col">
+        <img src="london.png" alt="">
+        <div class="layer">
+            <h3>LONDON</h3>
+        </div>
+    </div>
+    <div class="campus-col">
+        <img src="newyork.png" alt="">
+        <div class="layer">
+            <h3>NEWYORK</h3>
+        </div>
+    </div>
+    <div class="campus-col">
+        <img src="washington.png" alt="">
+        <div class="layer">
+            <h3>WASHINGTON</h3>
+        </div>
+    </div>
+
+</secton>
+
+<!-- ---------facilities------------- -->
+
+<section class="facilities">
+    <h1>Our facilities</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, dolore magnam neque ad amet doloribus tempore similique atque animi reiciendis.</p>
+    <div class="row">
+        <div class="facilities-col">
+            <img src="library.png" alt="">
+            <h3>World Class Library</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi reprehenderit itaque quos eveniet quam, quidem perspiciatis sit placeat architecto quo! Nulla consectetur ullam, vitae voluptas officiis in natus ipsam sit.</p>
+        </div>
+        <div class="facilities-col">
+            <img src="basketball.png" alt="">
+            <h3>World Class basketball Play ground</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi reprehenderit itaque quos eveniet quam, quidem perspiciatis sit placeat architecto quo! Nulla consectetur ullam, vitae voluptas officiis in natus ipsam sit.</p>
+        </div>
+        <div class="facilities-col">
+            <img src="cafeteria.png" alt="">
+            <h3>Testy And Healthy Food</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi reprehenderit itaque quos eveniet quam, quidem perspiciatis sit placeat architecto quo! Nulla consectetur ullam, vitae voluptas officiis in natus ipsam sit.</p>
+        </div>
+    </div>
+
+</section>
+<!-- ----------testimonials--------- -->
+<section class="testimonials">
+    <h1>What our Stuydent says</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime doloribus pariatur officia adipisci ipsam quo blanditiis amet excepturi assumenda cum quasi ea nemo aliquam incidunt, dolor asperiores neque libero suscipit.</p>
+    <div class="row">
+        <div class="testimonial-col">
+            <img src="user1.jpg" alt="">
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias inventore nostrum provident, fugiat dolores, commodi delectus dolore sequi voluptatibus aspernatur aliquid ipsum distinctio at? Debitis similique quia a nostrum eveniet?</p>
+                <h3>Christine Berkley</h3>
+            </div>
+        </div>
+        <div class="testimonial-col">
+            <img src="user2.jpg" alt="">
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias inventore nostrum provident, fugiat dolores, commodi delectus dolore sequi voluptatibus aspernatur aliquid ipsum distinctio at? Debitis similique quia a nostrum eveniet?</p>
+                <h3>Steve Rogger</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ----------Call to action------ -->
+<section class="cta">
+    <h1>Enroll For Our Various Online Courses <br> From The World</h1>
+    <a href="" class="hero-btn">CONTACT US</a>
+
+</section>
+
+
+<!-- -----------footer------- -->
+<section class="Footer">
+    <h4>About Us</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem cumque fugit <br> repudiandae doloremque eius suscipit nesciunt, id impedit beatae quisquam consectetur repellat in? Veniam natus ad quaerat enim minima.</p>
+    <!-- <div class="icons"> -->
+        <!-- <i></i> -->
+    </div>
+</section>
+</body>
+</html>
